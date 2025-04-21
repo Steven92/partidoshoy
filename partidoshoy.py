@@ -120,8 +120,8 @@ def extraer_datos_partidos():
         return []
 
 def main(event, context):
-    telegram_token = os.environ.get("TELEGRAM_BOT_TOKEN")
-    telegram_chat_id = os.environ.get("TELEGRAM_CHAT_ID")
+    telegram_token = os.environ.get("8039836429:AAE6cRuC-PxtFYZNiyEXS8oqjOEw7CE5T6o")
+    telegram_chat_id = os.environ.get("-323606418")
 
     if not telegram_token or not telegram_chat_id:
         print("Error: Variables de entorno TELEGRAM_BOT_TOKEN o TELEGRAM_CHAT_ID no configuradas.")
