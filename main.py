@@ -146,7 +146,7 @@ if __name__ == "__main__":
     import dotenv
     dotenv.load_dotenv()
     local_telegram_token = os.environ.get("TELEGRAM_BOT_TOKEN")
-    local_telegram_chat_id = os.environ.get("-323606418")
+    local_telegram_chat_id = os.environ.get("TELEGRAM_CHAT_ID")
 
     if local_telegram_token and local_telegram_chat_id:
         datos_partidos = extraer_datos_partidos()
