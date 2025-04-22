@@ -39,7 +39,13 @@ def run_health_check_server():
 
 if __name__ == "__main__":
     import threading
-    # Run the main function in a separate thread (or directly if it's quick)
-    threading.Thread(target=main, daemon=True).start()
-    # Start the health check server in the main thread
-    run_health_check_server()
+    print("Starting health check server...")
+    health_check_thread = threading.Thread(target=run_health_check_server, daemon=True)
+    health_check_thread.start()
+    print("Starting main function...")
+    main_thread = threading.Thread(target=main, daemon=True)
+    main_thread.start()
+    # Keep the main thread alive to allow the other threads to run
+    while True:
+        import time
+        time.sleep(1)
