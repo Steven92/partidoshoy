@@ -8,7 +8,7 @@ import asyncio
 url = "https://www.lapelotona.com/partidos-de-futbol-para-hoy-en-vivo/"
 
 # Reemplaza con el token de tu bot de Telegram
-#TELEGRAM_BOT_TOKEN = '8039836429:AAE6cRuC-PxtFYZNiyEXS8oqjOEw7CE5T6o'
+#TELEGRAM_BOT_TOKEN = ''
 # Reemplaza con el ID del chat al que quieres enviar los mensajes
 #TELEGRAM_CHAT_ID = '-323606418'
 
@@ -120,7 +120,7 @@ def extraer_datos_partidos():
         return []
 
 def main(event, context):
-    telegram_token = os.environ.get("8039836429:AAE6cRuC-PxtFYZNiyEXS8oqjOEw7CE5T6o")
+    telegram_token = os.environ.get("TELEGRAM_BOT_TOKEN")
     telegram_chat_id = os.environ.get("-323606418")
 
     if not telegram_token or not telegram_chat_id:
@@ -138,7 +138,7 @@ def main(event, context):
 if __name__ == "__main__":
     import dotenv
     dotenv.load_dotenv()
-    local_telegram_token = os.environ.get("8039836429:AAE6cRuC-PxtFYZNiyEXS8oqjOEw7CE5T6o")
+    local_telegram_token = os.environ.get("TELEGRAM_BOT_TOKEN")
     local_telegram_chat_id = os.environ.get("-323606418")
 
     if local_telegram_token and local_telegram_chat_id:
