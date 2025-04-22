@@ -7,11 +7,6 @@ import asyncio
 # URL de la página web que queremos consultar
 url = "https://www.lapelotona.com/partidos-de-futbol-para-hoy-en-vivo/"
 
-# Reemplaza con el token de tu bot de Telegram
-#TELEGRAM_BOT_TOKEN = ''
-# Reemplaza con el ID del chat al que quieres enviar los mensajes
-#TELEGRAM_CHAT_ID = '-323606418'
-
 # Lista de ligas que nos interesan (en minúsculas para hacer la comparación insensible a mayúsculas)
 LIGAS_INTERES = [
     "la liga ea sports",
@@ -121,9 +116,9 @@ def extraer_datos_partidos():
         print(f"Ocurrió un error inesperado: {e}")
         return []
 
-"""def main(event, context):
+def main(event, context):
     telegram_token = os.environ.get("TELEGRAM_BOT_TOKEN")
-    telegram_chat_id = os.environ.get("-323606418")
+    telegram_chat_id = os.environ.get("TELEGRAM_CHAT_ID") # Correct the environment variable name
 
     if not telegram_token or not telegram_chat_id:
         print("Error: Variables de entorno TELEGRAM_BOT_TOKEN o TELEGRAM_CHAT_ID no configuradas.")
@@ -136,12 +131,9 @@ def extraer_datos_partidos():
         print("Función ejecutada y mensaje (o mensajes) enviados a Telegram.")
     else:
         print("No se encontraron partidos para las ligas seleccionadas.")
-"""
-# main.py
-def main(event, context):
-    print("Simple Cloud Run function started successfully.")
-    return "OK"
 
+# REMOVE THIS ENTIRE BLOCK FOR CLOUD RUN DEPLOYMENT
+"""
 if __name__ == "__main__":
     import dotenv
     dotenv.load_dotenv()
@@ -154,3 +146,4 @@ if __name__ == "__main__":
             asyncio.run(enviar_mensaje_telegram(Bot(token=local_telegram_token), local_telegram_chat_id, datos_partidos))
     else:
         print("Advertencia: Variables de entorno para Telegram no configuradas localmente. El script en Cloud Functions las usará.")
+"""
