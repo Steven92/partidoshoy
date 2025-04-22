@@ -18,7 +18,9 @@ LIGAS_INTERES = [
     "serie a italiana",
     "bundesliga",
     "premier league",
-    "liga betplay dimayor"
+    "liga betplay dimayor",
+    "copa sudamericana",
+    "copa libertadores"
 ]
 
 async def enviar_mensaje_telegram(bot, chat_id, partidos_filtrados):
@@ -119,7 +121,7 @@ def extraer_datos_partidos():
         print(f"Ocurrió un error inesperado: {e}")
         return []
 
-def main(event, context):
+"""def main(event, context):
     telegram_token = os.environ.get("TELEGRAM_BOT_TOKEN")
     telegram_chat_id = os.environ.get("-323606418")
 
@@ -134,6 +136,11 @@ def main(event, context):
         print("Función ejecutada y mensaje (o mensajes) enviados a Telegram.")
     else:
         print("No se encontraron partidos para las ligas seleccionadas.")
+"""
+# main.py
+def main(event, context):
+    print("Simple Cloud Run function started successfully.")
+    return "OK"
 
 if __name__ == "__main__":
     import dotenv
