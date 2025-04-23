@@ -9,13 +9,13 @@ url = "https://www.lapelotona.com/partidos-de-futbol-para-hoy-en-vivo/"
 
 # Lista de ligas que nos interesan (en minúsculas para hacer la comparación insensible a mayúsculas)
 LIGAS_INTERES = [
-    "la liga ea sports",
-    "serie a italiana",
-    "bundesliga",
-    "premier league",
-    "liga betplay dimayor",
-    "copa sudamericana",
-    "copa libertadores"
+#    "la liga ea sports",
+#    "serie a italiana",
+#    "bundesliga",
+#    "premier league",
+#    "liga betplay dimayor",
+    "copa sudamericana"
+#    "copa libertadores"
 ]
 
 async def enviar_mensaje_telegram(bot, chat_id, partidos_filtrados):
